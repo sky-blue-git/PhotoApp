@@ -19,6 +19,7 @@ export default SearchBar
 
 const styles = StyleSheet.create({
   container : {
+    marginHorizontal: 32,
     borderWidth: 1,
     borderRadius: 8,
   },

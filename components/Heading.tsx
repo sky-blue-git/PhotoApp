@@ -27,7 +27,8 @@ export default Heading
 
 const styles = StyleSheet.create({
   container : {
-    paddingRight: 1,
+    paddingRight: 16,
+    paddingLeft: 32,
     flexDirection: "row",
     alignItems: "baseline",
     justifyContent: 'space-between',
@@ -41,6 +42,6 @@ const styles = StyleSheet.create({
   buttonText : {
     color: "#61758e",
     fontSize: 16,
-    marginRight: -19,
+    // marginRight: -19,
   }
 })

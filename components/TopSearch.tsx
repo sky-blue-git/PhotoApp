@@ -19,9 +19,10 @@ export default TopSearch
 
 const styles = StyleSheet.create({
   image : {
-    marginVertical: 32,
+    marginHorizontal: 32,
+    marginVertical: 24,
     height: 200,
-    width: 348, 
+    width: 348,
     borderRadius: 8,
     overflow: "hidden",
   },

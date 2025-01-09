@@ -3,6 +3,7 @@ import React from 'react'
 import SearchBar from './components/SearchBar'
 import TopSearch from './components/TopSearch'
 import Heading from './components/Heading'
+import TrendingHashtags from './components/TrendingHashtags'
 
 const App = () => {
   return (
@@ -11,7 +12,8 @@ const App = () => {
         <Heading title='Discover the world'/>
         <SearchBar/>
         <TopSearch/>
-        <Heading title='Trending hashTags' showButton={true}/>
+        <Heading title='Trending hashtags' showButton={true}/>
+        <TrendingHashtags/>
       </View>
     </View>
   )
@@ -25,7 +27,7 @@ const styles = StyleSheet.create({
     flex:1
   },
   container : {
-    marginHorizontal: 32,
+    // marginHorizontal: 32,
     marginTop: 64,
   },
 })
