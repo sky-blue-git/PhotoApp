@@ -6,7 +6,7 @@ interface headingProps {
   showButton?: boolean,
 }
 
-const Heading = ({title, showButton=false} : headingProps) => {
+const Heading = ({title, showButton=true} : headingProps) => {
   return (
     <View style = {styles.container}>
       <Text style={styles.heading}>
@@ -42,6 +42,5 @@ const styles = StyleSheet.create({
   buttonText : {
     color: "#61758e",
     fontSize: 16,
-    // marginRight: -19,
   }
 })
