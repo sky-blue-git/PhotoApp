@@ -1,38 +1,20 @@
-import { ScrollView, StyleSheet, View } from 'react-native'
-import React from 'react'
-import SearchBar from './components/SearchBar'
-import TopSearch from './components/TopSearch'
-import Heading from './components/Heading'
-import TrendingHashtags from './components/TrendingHashtags'
-import TopCommunity from './components/TopCommunity'
-import TopNomads from './components/TopNomads'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Home from './tab_components/Home';
+import { NavigationContainer } from '@react-navigation/native';
+
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
-    <ScrollView style = {styles.app}>
-      <View style = {styles.container}>
-        <Heading title='Discover the world' showButton={false}/>
-        <SearchBar/>
-        <TopSearch/>
-        <Heading title='Trending hashtags' />
-        <TrendingHashtags/>
-        <Heading title = 'Top community'/>
-        <TopCommunity/>
-        <Heading title='Top nomads' />
-        <TopNomads/>
-      </View>
-    </ScrollView>
-  )
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Discover" component={Home} />
+        <Tab.Screen name="Create" component={Home} />
+        <Tab.Screen name="Community" component={Home} />
+        <Tab.Screen name="Me" component={Home} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
 }
-
 export default App
-
-const styles = StyleSheet.create({
-  app : {
-    backgroundColor: "#EFF2F6",
-    flex:1
-  },
-  container : {
-    marginTop: 64,
-  },
-})
