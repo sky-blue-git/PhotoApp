@@ -7,7 +7,7 @@ import TrendingHashtags from '../components/TrendingHashtags'
 import TopCommunity from '../components/TopCommunity'
 import TopNomads from '../components/TopNomads'
 
-const Home = () => {
+const Discover = () => {
   return (
     <ScrollView style = {styles.app}>
       <View style = {styles.container}>
@@ -25,7 +25,7 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Discover
 
 const styles = StyleSheet.create({
   app : {
