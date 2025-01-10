@@ -11,3 +11,6 @@ for vector icons:
   npm install --save react-native-vector-icons
   apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle") <!-- add this line in build.gradle -->
   // @ts-ignore <!-- used this to avoid that error line bellow import Icon from 'react-native-vector-icons/MaterialIcons'; -->
+
+npm install react-native-linear-gradient
+

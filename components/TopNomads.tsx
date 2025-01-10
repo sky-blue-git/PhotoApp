@@ -1,5 +1,6 @@
 import { FlatList, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Heading from './Heading';
 
 const TopNomads = () => {
   const data = [
@@ -20,6 +21,7 @@ const TopNomads = () => {
   
   return (
     <View>
+      <Heading title='Top nomads'/>
       <FlatList data={data} renderItem={renderItem}  horizontal/>
     </View>
   )

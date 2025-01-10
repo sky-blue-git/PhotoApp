@@ -1,5 +1,6 @@
 import { FlatList, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Heading from './Heading';
 
 const TopCommunity = () => {
   const data = [
@@ -20,6 +21,7 @@ const TopCommunity = () => {
   
   return (
     <View>
+      <Heading title = 'Top community'/>
       <FlatList data={data} renderItem={renderItem}  horizontal/>
     </View>
   )

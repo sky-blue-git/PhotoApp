@@ -1,9 +1,10 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 const RestTabScreens = () => {
   return (
     <View style = {styles.container}>
+      <StatusBar backgroundColor="#EFF2F6" barStyle="dark-content" />
       <Text style = {styles.text}>Go to Discover Tab</Text>
     </View>
   )

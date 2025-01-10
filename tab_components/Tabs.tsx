@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Discover from '../tab_components/Discover';
 import RestTabScreens from '../tab_components/RestTabScreens';
+import LinearGradient from 'react-native-linear-gradient';
 
 const Tab = createBottomTabNavigator();
 
@@ -35,6 +36,13 @@ const Tabs = () => {
           }
           return <Icon name={iconName} size={30} color={color} />;
         },
+        tabBarBackground: () => (
+          <LinearGradient
+            colors={['#bac3ce', 'white', 'white']} 
+            locations={[0, 0.5, 1]} 
+            style={{ flex: 1 }}
+          />
+        ),
         tabBarActiveTintColor: '#61758e',
         tabBarInactiveTintColor: 'black',
       })}
