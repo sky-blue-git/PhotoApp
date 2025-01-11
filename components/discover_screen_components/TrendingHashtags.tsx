@@ -27,7 +27,7 @@ export default TrendingHashtags
 
 const styles = StyleSheet.create({
   image : {
-    marginTop: 8,
+    marginTop: 12,
     marginBottom: 24,
     height: 160,
     width: 160, 

@@ -28,10 +28,11 @@ const styles = StyleSheet.create({
   container : {
     alignItems: "center",
     marginRight: 16,
+    marginTop: 12,
     marginBottom: 24,
   },
   image : {
-    marginVertical: 8,
+    marginBottom: 8,
     height: 110,
     width: 110, 
     borderRadius: 55,
