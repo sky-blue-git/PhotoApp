@@ -7,7 +7,6 @@ const SearchBar = () => {
     setInput(text);
   }, [])
 
-  console.log(input);
   return (
     <View style = {styles.container}>
       <TextInput style = {styles.input} placeholder='Search' value={input} onChangeText={handleInput}/>

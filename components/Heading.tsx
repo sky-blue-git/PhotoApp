@@ -1,6 +1,8 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useCallback } from 'react'
 import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from './navigation_components/stacktype';
 
 interface headingProps {
   title: string,
@@ -8,17 +10,14 @@ interface headingProps {
 }
 
 const Heading = ({title, showButton=true} : headingProps) => {
-  const navigation = useNavigation();
-  const handlePress = useCallback(() => {
-    // navigation.navigate("TrendingHashtagList");
-  }, []);
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
   return (
     <View style = {styles.container}>
       <Text style={styles.heading}>
         {title}
       </Text>
       {showButton ? (
-        <TouchableOpacity onPress={handlePress}>
+        <TouchableOpacity onPress={() => navigation.navigate('HashtagList')}>
           <Text style={styles.buttonText}>
             See all
           </Text>
