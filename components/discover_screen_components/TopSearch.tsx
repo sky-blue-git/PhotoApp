@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 32,
     marginVertical: 24,
     height: 200,
-    width: 348,
     borderRadius: 8,
     overflow: "hidden",
   },

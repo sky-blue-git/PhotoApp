@@ -1,20 +1,13 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from './tab_components/Home';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-
-const Tab = createBottomTabNavigator();
+import AppStack from './components/navigation_components/Stack';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Discover" component={Home} />
-        <Tab.Screen name="Create" component={Home} />
-        <Tab.Screen name="Community" component={Home} />
-        <Tab.Screen name="Me" component={Home} />
-      </Tab.Navigator>
+      <AppStack />
     </NavigationContainer>
   );
-}
-export default App
+};
+
+export default App;

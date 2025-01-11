@@ -1,19 +1,30 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useCallback } from 'react'
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from './navigation_components/stacktype';
 
 interface headingProps {
   title: string,
-  showButton?: boolean,
+  navigateTo?: keyof RootStackParamList,
 }
 
-const Heading = ({title, showButton=true} : headingProps) => {
+const Heading = ({title, navigateTo} : headingProps) => {
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+  
+  const handlePress = useCallback(() => {
+    if (navigateTo) { 
+      navigation.navigate(navigateTo);
+    }
+  }, [navigateTo, navigation]);
+  
   return (
-    <View style = {styles.container}>
+    <View style={styles.container}>
       <Text style={styles.heading}>
         {title}
       </Text>
-      {showButton ? (
-        <TouchableOpacity>
+      { navigateTo ? (
+        <TouchableOpacity onPress={handlePress}>
           <Text style={styles.buttonText}>
             See all
           </Text>
@@ -32,7 +43,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "baseline",
     justifyContent: 'space-between',
-    marginBottom: 8,
+    marginVertical: 8,
   },
   heading : {
     color: "#61758e",

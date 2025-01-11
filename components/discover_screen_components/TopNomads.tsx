@@ -1,17 +1,13 @@
 import { FlatList, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Heading from '../Heading';
+import { nomadsData } from '../../data/nomadsData';
 
 const TopNomads = () => {
-  const data = [
-    { id: 1, handle: '@playaparker', followers:245 },
-    { id: 2, handle: '@mhogan', followers:240 },
-    { id: 3, handle: '@rayjosh', followers:234 },
-    { id: 4, handle: '@abc', followers:150 },
-    { id: 5, handle: '@bcd', followers:177 },
-  ];
+  const data = nomadsData;
 
   const renderItem = ({ item }: { item: { id: number; handle: string; followers:number } }) => (
-    <View style = {[styles.container, item.id===1 ? {marginLeft: 32} : item.id===5 ? {marginRight: 32} : null]}>
+    <View style = {[styles.container, item.id===1 ? {marginLeft: 32} : item.id===6 ? {marginRight: 32} : null]}>
       <Image source={{ uri: `https://picsum.photos/140?random=${item.id + 200}` }} style={styles.image} />
       <Text style={styles.text}>{item.handle}</Text>
       <Text style={styles.subtext}>{item.followers}k followers</Text>
@@ -20,7 +16,8 @@ const TopNomads = () => {
   
   return (
     <View>
-      <FlatList data={data} renderItem={renderItem}  horizontal/>
+      <Heading title='Top nomads' navigateTo='CommunityList'/>
+      <FlatList data={data} renderItem={renderItem} showsHorizontalScrollIndicator={false} horizontal/>
     </View>
   )
 }
@@ -31,10 +28,11 @@ const styles = StyleSheet.create({
   container : {
     alignItems: "center",
     marginRight: 16,
-    marginBottom: 16,
+    marginTop: 12,
+    marginBottom: 24,
   },
   image : {
-    marginVertical: 8,
+    marginBottom: 8,
     height: 110,
     width: 110, 
     borderRadius: 55,
