@@ -1,51 +1,66 @@
-import { FlatList, ImageBackground, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { FlatList, ImageBackground, StyleSheet, Text, View } from 'react-native';
+import React from 'react';
 import Heading from '../Heading';
+import { communityData } from '../../data/communityData';
 
 const TopCommunity = () => {
-  const data = [
-    { id: 1 , hashtag: '#Adventure' },
-    { id: 2, hashtag: '#Nature' },
-    { id: 3, hashtag: '#Travel' },
-    { id: 4, hashtag: '#Food' },
-    { id: 5, hashtag: '#Lifestyle' },
-  ];
+  const data = communityData.slice(0, 6);
 
-  const renderItem = ({ item }: { item: { id: number; hashtag: string } }) => (
-    <ImageBackground source={{ uri: `https://picsum.photos/200?random=${item.id + 100}` }} style={[styles.image, item.id===1 ? {marginLeft: 32} : item.id===5 ? {marginRight: 32} : null]}>
+  const renderItem = ({ item }: { item: { id: number; title: string; subtitle: string; posts: number } }) => (
+    <ImageBackground
+      source={{ uri: `https://picsum.photos/200?random=${item.id + 100}` }}
+      style={[
+        styles.image,
+        item.id === 1 ? { marginLeft: 32 } : item.id === data.length ? { marginRight: 32 } : null,
+      ]}
+    >
+      <Text style={styles.posts}>{item.posts} posts/day</Text>
       <View style={styles.imageView}>
-        <Text style={styles.imageText}>{item.hashtag}</Text>
+        <Text style={styles.title}>{item.title}</Text>
+        <Text style={styles.subtitle}>{item.subtitle}</Text>
       </View>
     </ImageBackground>
   );
-  
+
   return (
     <View>
-      <Heading title = 'Top community'/>
-      <FlatList data={data} renderItem={renderItem}  horizontal/>
+      <Heading title="Top community" navigateTo='CommunityList'/>
+      <FlatList data={data} renderItem={renderItem} showsHorizontalScrollIndicator={false} horizontal />
     </View>
-  )
-}
+  );
+};
 
-export default TopCommunity
+export default TopCommunity;
 
 const styles = StyleSheet.create({
-  image : {
+  image: {
     marginVertical: 8,
     height: 160,
-    width: 160, 
+    width: 160,
     marginRight: 16,
     borderRadius: 8,
-    overflow: "hidden",
+    overflow: 'hidden',
+  },
+  posts: {
+    position: 'absolute',
+    top: 4,
+    right: 0,
+    color: '#ffffff',
+    fontSize: 12,
+    paddingHorizontal: 6,
   },
   imageView: {
-    flex: 1,
-    padding: 8,
-    justifyContent: "flex-end",
+    position: 'absolute',
+    bottom: 8,
+    left: 8,
   },
-  imageText : {
-    color: "#ffffff",
-    fontSize: 18,
-    fontWeight: "bold",
-  }
-})
+  title: {
+    color: '#ffffff',
+    fontSize: 24,
+  },
+  subtitle: {
+    color: '#ffffff',
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+});

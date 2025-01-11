@@ -1,15 +1,10 @@
 import { FlatList, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Heading from '../Heading';
+import { nomadsData } from '../../data/NomadsData';
 
 const TopNomads = () => {
-  const data = [
-    { id: 1, handle: '@playaparker', followers:245 },
-    { id: 2, handle: '@mhogan', followers:240 },
-    { id: 3, handle: '@rayjosh', followers:234 },
-    { id: 4, handle: '@abc', followers:150 },
-    { id: 5, handle: '@bcd', followers:177 },
-  ];
+  const data = nomadsData
 
   const renderItem = ({ item }: { item: { id: number; handle: string; followers:number } }) => (
     <View style = {[styles.container, item.id===1 ? {marginLeft: 32} : item.id===5 ? {marginRight: 32} : null]}>
@@ -21,7 +16,7 @@ const TopNomads = () => {
   
   return (
     <View>
-      <Heading title='Top nomads'/>
+      <Heading title='Top nomads' navigateTo='CommunityList'/>
       <FlatList data={data} renderItem={renderItem}  horizontal/>
     </View>
   )

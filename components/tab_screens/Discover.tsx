@@ -12,7 +12,7 @@ const Discover = () => {
     <ScrollView style = {styles.app}>
       <View style = {styles.container}>
         <StatusBar backgroundColor="#EFF2F6" barStyle="dark-content" />
-        <Heading title='Discover the world' showButton={false}/>
+        <Heading title='Discover the world'/>
         <SearchBar/>
         <TopSearch/>
         <TrendingHashtags/>

@@ -17,8 +17,8 @@ const TrendingHashtags = () => {
   
   return (
     <View>
-      <Heading title='Trending hashtags' />
-      <FlatList data={data} renderItem={renderItem}  horizontal/>
+      <Heading title='Trending hashtags' navigateTo='HashtagList'/>
+      <FlatList data={data} renderItem={renderItem}  showsHorizontalScrollIndicator={false} horizontal />
     </View>
   )
 }

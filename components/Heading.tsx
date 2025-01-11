@@ -6,18 +6,25 @@ import { RootStackParamList } from './navigation_components/stacktype';
 
 interface headingProps {
   title: string,
-  showButton?: boolean,
+  navigateTo?: keyof RootStackParamList,
 }
 
-const Heading = ({title, showButton=true} : headingProps) => {
+const Heading = ({title, navigateTo} : headingProps) => {
   const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+  
+  const handlePress = useCallback(() => {
+    if (navigateTo) { 
+      navigation.navigate(navigateTo);
+    }
+  }, [navigateTo, navigation]);
+  
   return (
-    <View style = {styles.container}>
+    <View style={styles.container}>
       <Text style={styles.heading}>
         {title}
       </Text>
-      {showButton ? (
-        <TouchableOpacity onPress={() => navigation.navigate('HashtagList')}>
+      { navigateTo ? (
+        <TouchableOpacity onPress={handlePress}>
           <Text style={styles.buttonText}>
             See all
           </Text>
