@@ -17,7 +17,7 @@ const TopNomads = () => {
   return (
     <View>
       <Heading title='Top nomads' navigateTo='CommunityList'/>
-      <FlatList data={data} renderItem={renderItem}  horizontal/>
+      <FlatList data={data} renderItem={renderItem} showsHorizontalScrollIndicator={false} horizontal/>
     </View>
   )
 }
