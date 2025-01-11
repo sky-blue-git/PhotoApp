@@ -1,11 +1,11 @@
 export const hashtagData = [
   { id: 1, hashtag: '#adventure', used: '2.7m' },
-  { id: 2, hashtag: '#travel', used: '2.5m' },
+  { id: 2, hashtag: '#roadtrip', used: '2.5m' },
   { id: 3, hashtag: '#nature', used: '2.3m' },
   { id: 4, hashtag: '#vacation', used: '2.1m' },
   { id: 5, hashtag: '#explore', used: '2.0m' },
   { id: 6, hashtag: '#wander', used: '1.9m' },
-  { id: 7, hashtag: '#roadtrip', used: '1.8m' },
+  { id: 7, hashtag: '#travel', used: '1.8m' },
   { id: 8, hashtag: '#tourism', used: '1.7m' },
   { id: 9, hashtag: '#adventure', used: '1.6m' },
   { id: 10, hashtag: '#blogger', used: '1.5m' },

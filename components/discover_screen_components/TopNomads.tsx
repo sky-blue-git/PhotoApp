@@ -1,13 +1,13 @@
 import { FlatList, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Heading from '../Heading';
-import { nomadsData } from '../../data/NomadsData';
+import { nomadsData } from '../../data/nomadsData';
 
 const TopNomads = () => {
-  const data = nomadsData
+  const data = nomadsData;
 
   const renderItem = ({ item }: { item: { id: number; handle: string; followers:number } }) => (
-    <View style = {[styles.container, item.id===1 ? {marginLeft: 32} : item.id===5 ? {marginRight: 32} : null]}>
+    <View style = {[styles.container, item.id===1 ? {marginLeft: 32} : item.id===6 ? {marginRight: 32} : null]}>
       <Image source={{ uri: `https://picsum.photos/140?random=${item.id + 200}` }} style={styles.image} />
       <Text style={styles.text}>{item.handle}</Text>
       <Text style={styles.subtext}>{item.followers}k followers</Text>
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
   container : {
     alignItems: "center",
     marginRight: 16,
-    marginBottom: 16,
+    marginBottom: 24,
   },
   image : {
     marginVertical: 8,

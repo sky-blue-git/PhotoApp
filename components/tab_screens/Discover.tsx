@@ -31,6 +31,6 @@ const styles = StyleSheet.create({
     flex:1
   },
   container : {
-    marginTop: 64,
+    marginTop: 56,
   },
 })

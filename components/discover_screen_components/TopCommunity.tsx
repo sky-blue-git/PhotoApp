@@ -34,7 +34,8 @@ export default TopCommunity;
 
 const styles = StyleSheet.create({
   image: {
-    marginVertical: 8,
+    marginTop: 8,
+    marginBottom: 24,
     height: 160,
     width: 160,
     marginRight: 16,

@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "baseline",
     justifyContent: 'space-between',
-    marginBottom: 8,
+    marginVertical: 8,
   },
   heading : {
     color: "#61758e",

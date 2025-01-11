@@ -1,28 +1,36 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
-import React, { useCallback, useState } from 'react'
+import { StyleSheet, TextInput, View } from 'react-native';
+import React, { useCallback, useState } from 'react';
 
 const SearchBar = () => {
-  const [input , setInput] = useState('');
-  const  handleInput = useCallback((text: string) => {
+  const [input, setInput] = useState('');
+  const handleInput = useCallback((text: string) => {
     setInput(text);
-  }, [])
+  }, []);
 
   return (
-    <View style = {styles.container}>
-      <TextInput style = {styles.input} placeholder='Search' value={input} onChangeText={handleInput}/>
+    <View style={styles.container}>
+      <TextInput
+        style={styles.input}
+        placeholder="Search"
+        placeholderTextColor="#D3D3D3" 
+        value={input}
+        onChangeText={handleInput}
+      />
     </View>
-  )
-}
+  );
+};
 
-export default SearchBar
+export default SearchBar;
 
 const styles = StyleSheet.create({
-  container : {
+  container: {
     marginHorizontal: 32,
     borderWidth: 1,
     borderRadius: 8,
+    backgroundColor: 'white',
+    borderColor: '#D3D3D3', 
   },
-  input : {
+  input: {
     marginLeft: 16,
-  }
-})
+  },
+});
