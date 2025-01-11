@@ -1,11 +1,11 @@
 import { ScrollView, StatusBar, StyleSheet, View } from 'react-native'
 import React from 'react'
-import Heading from '../components/Heading'
-import SearchBar from '../components/SearchBar'
-import TopSearch from '../components/TopSearch'
-import TrendingHashtags from '../components/TrendingHashtags'
-import TopCommunity from '../components/TopCommunity'
-import TopNomads from '../components/TopNomads'
+import Heading from '../Heading'
+import SearchBar from '../discover_screen_components/SearchBar'
+import TopSearch from '../discover_screen_components/TopSearch'
+import TrendingHashtags from '../discover_screen_components/TrendingHashtags'
+import TopCommunity from '../discover_screen_components/TopCommunity'
+import TopNomads from '../discover_screen_components/TopNomads'
 
 const Discover = () => {
   return (

@@ -2,8 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 // @ts-ignore
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import Discover from '../tab_components/Discover';
-import RestTabScreens from '../tab_components/RestTabScreens';
+import Discover from '../tab_screens/Discover';
+import RestTabScreens from '../tab_screens/RestTabScreens';
 import LinearGradient from 'react-native-linear-gradient';
 
 const Tab = createBottomTabNavigator();

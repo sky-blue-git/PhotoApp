@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useCallback } from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 interface headingProps {
   title: string,
@@ -7,13 +8,17 @@ interface headingProps {
 }
 
 const Heading = ({title, showButton=true} : headingProps) => {
+  const navigation = useNavigation();
+  const handlePress = useCallback(() => {
+    // navigation.navigate("TrendingHashtagList");
+  }, []);
   return (
     <View style = {styles.container}>
       <Text style={styles.heading}>
         {title}
       </Text>
       {showButton ? (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handlePress}>
           <Text style={styles.buttonText}>
             See all
           </Text>

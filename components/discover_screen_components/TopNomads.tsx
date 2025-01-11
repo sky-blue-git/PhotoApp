@@ -1,6 +1,6 @@
 import { FlatList, Image, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Heading from './Heading';
+import Heading from '../Heading';
 
 const TopNomads = () => {
   const data = [
