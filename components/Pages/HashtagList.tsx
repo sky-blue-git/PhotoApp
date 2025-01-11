@@ -2,6 +2,7 @@ import { FlatList, ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react';
 import Heading from '../Heading';
 import { hashtagData } from '../../data/hashtagData';
+import Header from '../Header';
 
 const HashtagList = () => {
   const data = hashtagData;
@@ -10,7 +11,7 @@ const HashtagList = () => {
     <View style={styles.itemContainer}>
       <ImageBackground
         source={{ uri: `https://picsum.photos/200?random=${item.id}` }}
-        style={[styles.image, item.id === 50 ? {marginBottom: 32} : null]}
+        style={[styles.image, item.id === 50  ? {marginBottom: 96} : ((item.id === 1 || item.id === 2)   ? {marginTop: 12} : null) ]}
       >
         <View style={styles.imageView}>
           <Text style={styles.imageText}>{item.hashtag}</Text>
@@ -21,8 +22,8 @@ const HashtagList = () => {
   );
 
   return (
-    <View style = {{marginVertical: 32}}>
-      <Heading title="Hashtags List" showButton={false} />
+    <View>
+      <Header title="Page Title" />
       <FlatList
         data={data}
         renderItem={renderItem}
